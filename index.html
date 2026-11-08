@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#08090c">
+<title>PRISCIENCE — See Beyond. Learn Science.</title>
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="#"><img src="/logo.jpg" alt="PRISCIENCE logo"><span>PRISCIENCE<small>SEE BEYOND. LEARN SCIENCE.</small></span></a>
+  <nav><a href="#classes">Classes</a><a href="#library">Library</a><button class="outline" id="adminOpen">Admin</button></nav>
+</header>
+<main>
+<section class="hero">
+  <div class="eyebrow"><span></span> SCIENCE LEARNING HUB</div>
+  <h1>Explore. Understand.<br><em>Discover Science.</em></h1>
+  <p>Learn at your own pace with classroom presentations and video lessons, organised by class.</p>
+  <a class="primary" href="#classes">Explore classes <b>↗</b></a>
+  <div class="hero-art"><div class="orbit o1"></div><div class="orbit o2"></div><div class="core">P</div><span class="dot d1"></span><span class="dot d2"></span><span class="dot d3"></span></div>
+</section>
+
+<section id="classes" class="section">
+  <div class="section-head"><div><div class="eyebrow">CHOOSE YOUR LEVEL</div><h2>Learning by class</h2></div><p>Pick your class to explore its lessons.</p></div>
+  <div class="class-grid">
+    <button class="class-card active" data-class="6"><span class="class-number">06</span><span><small>FOUNDATION</small><strong>Class 6</strong><i>Explore the basics</i></span><b>↗</b></button>
+    <button class="class-card" data-class="7"><span class="class-number">07</span><span><small>BUILD YOUR BASE</small><strong>Class 7</strong><i>Connect the concepts</i></span><b>↗</b></button>
+    <button class="class-card" data-class="8"><span class="class-number">08</span><span><small>GO FURTHER</small><strong>Class 8</strong><i>Think beyond the textbook</i></span><b>↗</b></button>
+  </div>
+</section>
+
+<section id="library" class="section library">
+  <div class="section-head"><div><div class="eyebrow">THE PRISCIENCE LIBRARY</div><h2 id="libraryTitle">Class 6 resources</h2></div><span class="count" id="count">0 RESOURCES</span></div>
+  <div class="filters"><button class="filter active" data-filter="all">All resources</button><button class="filter" data-filter="presentation">PPT / PDF</button><button class="filter" data-filter="video">Videos</button><input id="search" placeholder="Search lessons..." aria-label="Search lessons"></div>
+  <div id="lessons" class="lesson-grid"><div class="empty">Loading resources…</div></div>
+</section>
+</main>
+<footer><div class="footer-brand">PRISCIENCE <span>© 2026</span></div><p>SEE BEYOND. LEARN SCIENCE.</p></footer>
+
+<div class="modal hidden" id="adminModal">
+ <div class="modal-card"><button class="close" id="adminClose">×</button>
+  <div class="eyebrow">CONTENT MANAGEMENT</div><h2>Admin access</h2>
+  <div id="loginPanel"><p class="muted">Sign in to publish lessons for students.</p><form id="loginForm"><input type="password" id="password" placeholder="Admin password" required><button class="primary full">Sign in</button></form></div>
+  <div id="uploadPanel" class="hidden">
+   <p class="muted">Upload a presentation or video. It will appear in the selected class library.</p>
+   <form id="uploadForm">
+    <label>Lesson title<input name="title" maxlength="120" placeholder="e.g. Nutrition in Plants" required></label>
+    <label>Class<select name="className"><option value="6">Class 6</option><option value="7">Class 7</option><option value="8">Class 8</option></select></label>
+    <label>Short description<textarea name="description" maxlength="500" placeholder="What will students learn?"></textarea></label>
+    <label>Choose file<input type="file" name="file" accept=".ppt,.pptx,.pdf,.mp4,.webm,.mov" required></label>
+    <small class="muted">Allowed: PPT, PPTX, PDF, MP4, WEBM, MOV · Maximum 500 MB</small>
+    <button class="primary full">Publish resource</button>
+   </form><button class="text-button" id="logout">Sign out</button>
+  </div><p id="adminMessage" class="message"></p>
+ </div>
+</div>
+<div class="modal hidden" id="viewer"><div class="viewer-card"><button class="close" id="viewerClose">×</button><h3 id="viewerTitle"></h3><div id="viewerBody"></div></div></div>
+<script src="/app.js"></script>
+</body></html>
